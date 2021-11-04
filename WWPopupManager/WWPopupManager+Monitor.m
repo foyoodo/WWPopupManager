@@ -40,12 +40,11 @@
 
 }
 
-- (void)monitor_dismissAnimated:(BOOL)animated completion:(WWPopupCompletionBlock)completion {
-    WWPopupCompletionBlock newCompletion = ^(){
+- (void)monitor_dismissAnimated:(BOOL)animated completion:(void (^ __nullable)(void))completion {
+    [self monitor_dismissAnimated:animated completion:^{
         !completion ?: completion();
         [WWPopupManager dismissIfDrop:NO];
-    };
-    [self monitor_dismissAnimated:animated completion:newCompletion];
+    }];
 }
 
 @end

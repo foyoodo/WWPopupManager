@@ -17,6 +17,4 @@ typedef NS_ENUM(NSUInteger, WWPopupPriority) {
 typedef void(^WWPopupShowBlock)(void);
 typedef void(^WWPopupDismissBlock)(void);
 
-typedef void(^WWPopupCompletionBlock)(void);
-
 #endif /* WWPopupManagerConstant_h */

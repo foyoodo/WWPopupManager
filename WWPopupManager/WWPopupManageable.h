@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol WWPopupManageable <NSObject>
 
-- (void)showAnimated:(BOOL)flag completion:(WWPopupCompletionBlock _Nullable)completion;
-- (void)dismissAnimated:(BOOL)flag completion:(WWPopupCompletionBlock _Nullable)completion;
+- (void)showAnimated:(BOOL)flag completion:(void (^ __nullable)(void))completion;
+- (void)dismissAnimated:(BOOL)flag completion:(void (^ __nullable)(void))completion;
 
 @end
 
