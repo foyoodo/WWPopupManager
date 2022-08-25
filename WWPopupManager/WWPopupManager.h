@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)dismissIfDrop:(BOOL)drop;
 
++ (void)cleanQueue;
+
 @end
 
 NS_ASSUME_NONNULL_END

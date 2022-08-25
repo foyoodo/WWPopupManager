@@ -45,6 +45,12 @@ using namespace std;
     _list.insert(it, element);
 }
 
+- (void)clear {
+    while (_list.front()) {
+        _list.pop_front();
+    }
+}
+
 @end
 
 

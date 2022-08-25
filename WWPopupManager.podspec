@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "WWPopupManager"
-  spec.version      = "0.0.2"
-  spec.summary      = "WWPopupManager is a manager to manage popupView and popupViewController."
+  spec.version      = "0.1.1"
+  spec.summary      = "WWPopupManager is a manager to manage popupElements."
 
   spec.homepage     = "https://github.com/foyoodo/WWPopupManager"
 

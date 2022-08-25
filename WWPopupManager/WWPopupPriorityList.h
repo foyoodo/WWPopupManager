@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (WWPopupElement *)front;
 - (void)popFront;
 - (void)add:(WWPopupElement *)element;
+- (void)clear;
 
 @end
 

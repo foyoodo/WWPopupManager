@@ -18,13 +18,13 @@
 
     Class clz = [target class];
 
-    SEL originalSelector = @selector(dismissAnimated:completion:);
-    SEL swizzledSelector = @selector(monitor_dismissAnimated:completion:);
+    SEL originalSelector = @selector(removeAnimated:completion:);
+    SEL swizzledSelector = @selector(monitor_removeAnimated:completion:);
 
     Method originalMethod = class_getInstanceMethod(clz, originalSelector);
     Method swizzledMethod = class_getInstanceMethod([self class], swizzledSelector);
 
-    NSAssert(originalMethod, @"You have to implement -dismissAnimated:completion:");
+    NSAssert(originalMethod, @"You have to implement -removeAnimated:completion:");
 
     IMP originalImp = class_getMethodImplementation(clz, originalSelector);
     IMP swizzledImp = class_getMethodImplementation([self class], swizzledSelector);
@@ -40,8 +40,8 @@
 
 }
 
-- (void)monitor_dismissAnimated:(BOOL)animated completion:(void (^ __nullable)(void))completion {
-    [self monitor_dismissAnimated:animated completion:^{
+- (void)monitor_removeAnimated:(BOOL)animated completion:(void (^ __nullable)(void))completion {
+    [self monitor_removeAnimated:animated completion:^{
         !completion ?: completion();
         [WWPopupManager dismissIfDrop:NO];
     }];

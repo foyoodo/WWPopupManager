@@ -51,6 +51,10 @@ static void _WWPopupManagerInitGlobalSEM() {
     [[self sharedManager] dismissIfDrop:drop];
 }
 
++ (void)cleanQueue {
+    [[self sharedManager] cleanQueue];
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         _WWPopupManagerInitGlobalSEM();
@@ -107,6 +111,10 @@ static void _WWPopupManagerInitGlobalSEM() {
         });
         front.actived = YES;
     }
+}
+
+- (void)cleanQueue {
+    [self->_popupList clear];
 }
 
 @end
